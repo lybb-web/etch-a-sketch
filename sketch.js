@@ -35,8 +35,24 @@ function makeGrid(grid, width, dimension)
     }
 }
 
+
+
+
 let dimension = 16;
 let grid = document.querySelector("#grid");
 
 let gridWidth = getPixelDimensions(grid);
 makeGrid(grid, gridWidth, dimension);
+
+grid.addEventListener("mouseover", (e) =>
+{
+    let target = e.target;
+    if (target.id == "pixel")
+    {
+        target.style.backgroundColor = "black";
+    }
+    
+}
+
+
+);
