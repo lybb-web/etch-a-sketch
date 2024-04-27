@@ -49,7 +49,9 @@ grid.addEventListener("mouseover", (e) =>
     let target = e.target;
     if (target.id == "pixel")
     {
-        target.style.backgroundColor = "black";
+        target.classList.remove("unhovered");
+        target.classList.add("hovered");
+        // target.style.backgroundColor = "black";
     }
     
 }
@@ -61,8 +63,24 @@ grid.addEventListener("mouseout", (e) =>
     let target = e.target;
     if (target.id == "pixel")
     {
-        target.style.backgroundColor = "white";
+        target.classList.remove("hovered");
+        target.classList.add("unhovered")
+        // target.style.backgroundColor = "white";
     }
 
 }
 );
+
+grid.addEventListener("click", (e) =>
+{
+    let target = e.target;
+    if (target.id == "pixel")
+    {
+        target.classList.remove("hovered")
+        target.classList.add("clicked");
+    }
+    
+}
+);
+
+
