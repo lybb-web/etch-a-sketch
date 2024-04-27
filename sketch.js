@@ -53,6 +53,16 @@ grid.addEventListener("mouseover", (e) =>
     }
     
 }
+);
 
+grid.addEventListener("mouseout", (e) =>
 
+{
+    let target = e.target;
+    if (target.id == "pixel")
+    {
+        target.style.backgroundColor = "white";
+    }
+
+}
 );
