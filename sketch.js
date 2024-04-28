@@ -90,3 +90,16 @@ grid.addEventListener("click", (e) =>
 );
 
 
+const pixelCount = document.querySelector("#pixel-count");
+pixelCount.addEventListener("click", (e) =>
+
+{
+   let length = prompt("How many pixels per row and column? (1-100)");
+   let grid = document.querySelector("#grid");
+   grid.innerHTML = '';
+   makeGrid(grid, gridWidth, length);
+}
+
+);
+
+
