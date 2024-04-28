@@ -12,6 +12,7 @@ function createPixel(r, h)
     pixel.id = "pixel";
     pixel.style.width = String(h) + "px";
     pixel.style.height = String(h) + "px";
+    pixel.classList.add("default");
     r.appendChild(pixel);
 
 }
@@ -49,7 +50,7 @@ grid.addEventListener("mouseover", (e) =>
     let target = e.target;
     if (target.id == "pixel")
     {
-        target.classList.remove("unhovered");
+        target.classList.remove("default");
         target.classList.add("hovered");
         // target.style.backgroundColor = "black";
     }
@@ -64,7 +65,11 @@ grid.addEventListener("mouseout", (e) =>
     if (target.id == "pixel")
     {
         target.classList.remove("hovered");
-        target.classList.add("unhovered")
+        if (! target.classList.contains("clicked"))
+        {
+            target.classList.add("default")
+        }
+        
         // target.style.backgroundColor = "white";
     }
 
@@ -77,6 +82,7 @@ grid.addEventListener("click", (e) =>
     if (target.id == "pixel")
     {
         target.classList.remove("hovered")
+
         target.classList.add("clicked");
     }
     
